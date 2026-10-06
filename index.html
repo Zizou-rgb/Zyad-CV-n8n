@@ -19,7 +19,7 @@
   --chat--message--bot--background:#fff; --chat--message--user--background:#0E5A6B;
   --chat--border-radius:10px; --chat--spacing:1rem; --chat--heading--font-size:1.25rem;
 }
-*{box-sizing:border-box}
+.wrap,.chat,.btn,.skills li{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.6;font-size:17px}
 a{color:inherit}
@@ -43,7 +43,7 @@ h2{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;margin:0 0 .75r
 .chat-intro{color:#fff;padding:12px 12px 14px;margin:0;font-size:.98rem}
 .chat-intro b{font-family:'Bricolage Grotesque',sans-serif;font-size:1.25rem;display:block}
 .chat-intro span{color:var(--sand)}
-#n8n-chat{height:min(640px,75vh);border-radius:10px;overflow:hidden}
+#n8n-chat{height:660px;min-height:520px;max-height:85vh;border-radius:10px;overflow:hidden}
 .note{color:#B8C9CC;font-size:.82rem;margin:10px 12px 4px}
 footer{grid-column:1/-1;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);padding-top:1rem}
 @media (max-width:860px){.wrap{grid-template-columns:1fr}.chat{position:static}}
@@ -91,7 +91,7 @@ createChat({
   target: '#n8n-chat',
   mode: 'fullscreen',
   showWelcomeScreen: false,
-  loadPreviousSession: true,
+  loadPreviousSession: false,
   defaultLanguage: 'en',
   initialMessages: [
     "Hi, I'm ZyadBot, Zyad's AI assistant. Ask me about his experience, projects or skills.",
