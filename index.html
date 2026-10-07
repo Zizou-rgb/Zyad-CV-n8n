@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zyad El Fazazi | Data & Business Analyst</title>
-<meta name="description" content="CV interactif de Zyad El Fazazi : posez vos questions à ZyadBot, son assistant IA.">
+<meta name="description" content="CV interactif de Zyad El Fazazi / Interactive CV of Zyad El Fazazi: ZyadBot.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,24 +19,29 @@
   --chat--message--bot--background:#fff; --chat--message--user--background:#0E5A6B;
   --chat--border-radius:10px; --chat--spacing:1rem; --chat--heading--font-size:1.25rem;
 }
-.wrap,.chat,.btn,.skills li{box-sizing:border-box}
+html[lang="fr"] [lang="en"],html[lang="en"] [lang="fr"]{display:none!important}
+.wrap,.chat,.btn,.skills li,.lang button{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.6;font-size:17px}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--teal);outline-offset:3px}
-.wrap{max-width:1160px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(20px,4vw,40px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:start}
+.wrap{max-width:1160px;margin:0 auto;padding:clamp(20px,4vw,48px) clamp(20px,4vw,40px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:start}
+.top{grid-column:1/-1;display:flex;justify-content:flex-end}
+.lang{display:flex;border:2px solid var(--ink);border-radius:8px;overflow:hidden}
+.lang button{font:600 .9rem 'Instrument Sans',sans-serif;padding:.35rem .8rem;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
 h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.02;letter-spacing:-.02em;margin:0 0 .5rem}
 .role{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:1.2rem;color:var(--teal);margin:0 0 1.5rem}
 .lead{max-width:56ch;margin:0 0 1.75rem;color:var(--muted)}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem}
 .btn{display:inline-block;padding:.7rem 1.2rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
 .btn.primary{background:var(--ink);color:#fff}
-.btn:hover{background:var(--sand);color:var(--ink);border-color:var(--ink)}
+.btn:hover{background:var(--sand);color:var(--ink)}
 h2{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;margin:0 0 .75rem}
 .path{list-style:none;margin:0 0 2rem;padding:0;border-left:3px solid var(--teal)}
 .path li{padding:0 0 1rem 1.1rem}
 .path b{display:block}
-.path span{color:var(--muted);font-size:.95rem}
+.path em{display:block;font-style:normal;color:var(--muted);font-size:.95rem}
 .skills{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
 .skills li{background:#fff;border:1px solid var(--line);border-radius:6px;padding:.25rem .65rem;font-size:.92rem}
 .chat{position:sticky;top:24px;background:var(--deep);border-radius:16px;padding:12px;box-shadow:0 18px 40px -20px rgba(10,42,51,.6)}
@@ -45,64 +50,132 @@ h2{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;margin:0 0 .75r
 .chat-intro span{color:var(--sand)}
 #n8n-chat{height:660px;min-height:520px;max-height:85vh;border-radius:10px;overflow:hidden}
 .note{color:#B8C9CC;font-size:.82rem;margin:10px 12px 4px}
+.note a{color:var(--sand)}
+.privacy{grid-column:1/-1;border-top:1px solid var(--line);padding-top:1.75rem;max-width:80ch;font-size:.95rem}
+.privacy h2{font-size:1.25rem}
+.privacy ul{padding-left:1.1rem}
+.privacy li{margin-bottom:.5rem}
+.privacy .upd{color:var(--muted);font-size:.88rem}
 footer{grid-column:1/-1;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);padding-top:1rem}
 @media (max-width:860px){.wrap{grid-template-columns:1fr}.chat{position:static}}
 </style>
 </head>
 <body>
 <main class="wrap">
+  <div class="top"><div class="lang" role="group" aria-label="Langue / Language">
+    <button type="button" data-set="fr" aria-pressed="true">FR</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
+  </div></div>
+
   <section>
     <h1>Zyad El Fazazi</h1>
-    <p class="role">Data & Business Analyst | Pilotage, Tech et Transformation digitale</p>
-    <p class="lead">Ingénieur (Polytech Marseille) et manager (IAE Aix), j'ai conçu des dashboards Power BI et des automatisations au sein de l'équipe PMO d'Ingenico. Je cherche un CDI à partir d'octobre 2026, à la croisée du pilotage, de la data et de la gestion de projet.</p>
+    <p class="role" lang="fr">Data & Business Analyst | Pilotage, Tech et Transformation digitale</p>
+    <p class="role" lang="en">Data & Business Analyst | Steering, Tech & Digital Transformation</p>
+    <p class="lead" lang="fr">Ingénieur (Polytech Marseille) et manager (IAE Aix), j'ai conçu des dashboards Power BI et des automatisations au sein de l'équipe PMO d'Ingenico. Je cherche un CDI à partir d'octobre 2026, en data, business analysis ou conseil, à la croisée du pilotage, de la data et de la gestion de projet.</p>
+    <p class="lead" lang="en">Engineer (Polytech Marseille) and manager (IAE Aix), I designed Power BI dashboards and automations in Ingenico's PMO team. I am looking for a permanent position from October 2026 in data, business analysis or consulting, at the crossroads of steering, data and project management.</p>
     <div class="actions">
-      <a class="btn primary" href="cv-zyad-el-fazazi.pdf">Télécharger le CV</a>
+      <a class="btn primary" lang="fr" href="cv-zyad-el-fazazi.pdf">Télécharger le CV</a>
+      <a class="btn primary" lang="en" href="cv-zyad-elfazazi-eng.pdf">Download my CV</a>
       <a class="btn" href="https://www.linkedin.com/in/zyad-el-fazazi-4b3121267">LinkedIn</a>
-      <a class="btn" href="mailto:zyadelfazazi45@gmail.com">Écrire à Zyad</a>
+      <a class="btn" href="mailto:zyadelfazazi45@gmail.com"><span lang="fr">Écrire à Zyad</span><span lang="en">Email Zyad</span></a>
     </div>
 
-    <h2>Parcours</h2>
+    <h2><span lang="fr">Expérience & projets</span><span lang="en">Experience & projects</span></h2>
     <ul class="path">
-      <li><b>Apprenti Data Analyste, Ingenico</b><span>Nov 2025 à Sep 2026. Dashboards Power BI, ETL, automatisation avec Power Automate et n8n.</span></li>
-      <li><b>Assistant ingénieur chercheur, UFRJ (Brésil)</b><span>Mai à Août 2025. Coordination d'une enquête de terrain auprès d'étudiants.</span></li>
-      <li><b>MSc2 MBA Management général, IAE Aix</b><span>2025 à 2026.</span></li>
-      <li><b>Diplôme d'ingénieur, Polytech Marseille</b><span>Génie industriel et informatique, 2023 à 2026.</span></li>
+      <li><b><span lang="fr">Apprenti Data Analyste</span><span lang="en">Data Analyst Apprentice</span>, Ingenico (Valence)</b>
+        <em lang="fr">Nov. 2025 à sept. 2026. Dashboards Power BI, ETL, automatisation avec Power Automate et n8n.</em>
+        <em lang="en">Nov 2025 to Sep 2026. Power BI dashboards, ETL, automation with Power Automate and n8n.</em></li>
+      <li><b><span lang="fr">Assistant ingénieur chercheur</span><span lang="en">Research Engineer Assistant</span>, UFRJ (<span lang="fr">Brésil</span><span lang="en">Brazil</span>)</b>
+        <em lang="fr">Mai à août 2025. Coordination d'une enquête de terrain auprès d'étudiants.</em>
+        <em lang="en">May to Aug 2025. Coordination of a field survey with students.</em></li>
+      <li><b><span lang="fr">Projet académique : unité de production de shampoing</span><span lang="en">Academic project: shampoo production unit</span></b>
+        <em lang="fr">Polytech Marseille, avril à mai 2024. Étude de faisabilité, planning MS Project, suivi budgétaire.</em>
+        <em lang="en">Polytech Marseille, Apr to May 2024. Feasibility study, MS Project schedule, budget tracking.</em></li>
     </ul>
 
-    <h2>Compétences</h2>
+    <h2><span lang="fr">Formation</span><span lang="en">Education</span></h2>
+    <ul class="path">
+      <li><b><span lang="fr">MSc2 MBA Management général</span><span lang="en">MSc2 MBA General Management</span>, IAE Aix-en-Provence</b><em>2025 – 2026</em></li>
+      <li><b><span lang="fr">Diplôme d'ingénieur, Génie industriel & informatique</span><span lang="en">Engineering degree, Industrial Engineering & Computer Science</span>, Polytech Marseille</b><em>2023 – 2026</em></li>
+    </ul>
+
+    <h2><span lang="fr">Compétences</span><span lang="en">Skills</span></h2>
     <ul class="skills">
-      <li>Power BI</li><li>SQL</li><li>Python</li><li>Power Automate</li><li>n8n</li><li>Databricks</li><li>Azure et GCP</li><li>JIRA</li><li>Lean et Agile</li><li>IA générative</li>
+      <li>Power BI</li><li>SQL</li><li>Python</li><li>Power Automate</li><li>n8n</li><li>Databricks</li><li>Azure & GCP</li><li>JIRA</li><li>Lean & Agile</li><li lang="fr">IA générative</li><li lang="en">Generative AI</li>
     </ul>
   </section>
 
-  <aside class="chat" aria-label="Chatbot ZyadBot">
-    <p class="chat-intro"><b>Demandez-moi tout sur Zyad</b><span>ZyadBot, assistant IA, répond en français ou en anglais.</span></p>
+  <aside class="chat" aria-label="ZyadBot">
+    <p class="chat-intro"><b lang="fr">Demandez-moi tout sur Zyad</b><b lang="en">Ask me anything about Zyad</b>
+      <span lang="fr">ZyadBot, assistant IA, répond en français ou en anglais.</span><span lang="en">ZyadBot, an AI assistant, answers in English or French.</span></p>
     <div id="n8n-chat"></div>
-    <p class="note">ZyadBot est une IA et peut se tromper. Pour confirmer une information, contactez Zyad directement.</p>
+    <p class="note" lang="fr">ZyadBot est une IA et peut se tromper. Pour confirmer une information, contactez Zyad. <a href="#privacy">Confidentialité</a></p>
+    <p class="note" lang="en">ZyadBot is an AI and can make mistakes. To confirm anything, contact Zyad. <a href="#privacy">Privacy</a></p>
   </aside>
 
-  <footer>© 2026 Zyad El Fazazi</footer>
+  <section class="privacy" id="privacy">
+    <div lang="fr">
+      <h2>Politique de confidentialité</h2>
+      <p class="upd">Dernière mise à jour : octobre 2026</p>
+      <ul>
+        <li><b>Responsable :</b> Zyad El Fazazi, joignable à zyadelfazazi45@gmail.com.</li>
+        <li><b>Données traitées :</b> les messages que vous écrivez dans le chat, un identifiant de session aléatoire, et des données techniques de connexion (adresse IP, navigateur) vues par les hébergeurs. Merci de ne pas saisir d'informations sensibles ou confidentielles.</li>
+        <li><b>Finalité et base légale :</b> permettre à ZyadBot de répondre à vos questions sur le profil de Zyad, et corriger ses réponses. Base : l'intérêt légitime de présenter ce profil.</li>
+        <li><b>Destinataires :</b> Hostinger (hébergement du chatbot), Google (modèle Gemini qui génère les réponses, vos messages lui sont transmis), Qdrant (base de connaissances sur Zyad, qui reçoit seulement une représentation numérique de votre question pour la recherche), GitHub (hébergement de cette page), jsDelivr et Google Fonts (chargement du script du chat et des polices, ils voient votre adresse IP). Certains traitements peuvent avoir lieu hors de l'Union européenne, avec les garanties prévues par ces prestataires.</li>
+        <li><b>Durée :</b> les conversations sont conservées au maximum 30 jours dans les journaux du chatbot, puis supprimées.</li>
+        <li><b>Cookies :</b> aucun cookie ni outil de mesure d'audience. Votre choix de langue est mémorisé dans votre navigateur et n'est pas transmis.</li>
+        <li><b>Intelligence artificielle :</b> ZyadBot est une IA, ses réponses peuvent contenir des erreurs.</li>
+        <li><b>Vos droits :</b> accès, rectification, effacement, opposition et limitation, en écrivant à l'adresse ci-dessus. Vous pouvez aussi saisir la CNIL (cnil.fr).</li>
+      </ul>
+    </div>
+    <div lang="en">
+      <h2>Privacy notice</h2>
+      <p class="upd">Last updated: October 2026</p>
+      <ul>
+        <li><b>Controller:</b> Zyad El Fazazi, reachable at zyadelfazazi45@gmail.com.</li>
+        <li><b>Data processed:</b> the messages you type in the chat, a random session ID, and technical connection data (IP address, browser) seen by the hosting providers. Please do not enter sensitive or confidential information.</li>
+        <li><b>Purpose and legal basis:</b> to let ZyadBot answer your questions about Zyad's profile, and to correct its answers. Basis: the legitimate interest in presenting this profile.</li>
+        <li><b>Recipients:</b> Hostinger (chatbot hosting), Google (Gemini model that generates answers, your messages are sent to it), Qdrant (knowledge base about Zyad, which only receives a numerical representation of your question for the search), GitHub (hosting of this page), jsDelivr and Google Fonts (loading the chat script and fonts, they see your IP address). Some processing may take place outside the European Union, under the safeguards these providers offer.</li>
+        <li><b>Retention:</b> conversations are kept for at most 30 days in the chatbot logs, then deleted.</li>
+        <li><b>Cookies:</b> no cookies and no analytics. Your language choice is remembered in your browser and is not transmitted.</li>
+        <li><b>Artificial intelligence:</b> ZyadBot is an AI, and its answers may contain errors.</li>
+        <li><b>Your rights:</b> access, rectification, erasure, objection and restriction, by writing to the address above. You may also contact the French data protection authority (CNIL, cnil.fr).</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>© 2026 Zyad El Fazazi · <a href="#privacy"><span lang="fr">Confidentialité</span><span lang="en">Privacy</span></a></footer>
 </main>
 
 <script type="module">
 import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-createChat({
-  webhookUrl: 'https://n8n-6dyz.srv2038305.hstgr.cloud/webhook/7f9ac0fe-699a-468a-a42e-528cbb82110b/chat',
-  target: '#n8n-chat',
-  mode: 'fullscreen',
-  showWelcomeScreen: false,
-  loadPreviousSession: false,
-  defaultLanguage: 'en',
-  initialMessages: [
-    "Hi, I'm ZyadBot, Zyad's AI assistant. Ask me about his experience, projects or skills.",
-    "Bonjour, je suis ZyadBot, l'assistant IA de Zyad. Posez-moi vos questions sur son parcours, ses projets ou ses compétences."
-  ],
-  i18n: { en: {
-    title: 'ZyadBot', subtitle: '', footer: '',
-    getStarted: 'Nouvelle conversation',
-    inputPlaceholder: 'Votre question / Your question'
-  } }
-});
+const URL_HOOK = 'https://n8n-6dyz.srv2038305.hstgr.cloud/webhook/7f9ac0fe-699a-468a-a42e-528cbb82110b/chat';
+const T = {
+  fr: { msg: "Bonjour, je suis ZyadBot, l'assistant IA de Zyad. Posez-moi vos questions sur son parcours, ses projets ou ses compétences.", ph: 'Votre question', start: 'Nouvelle conversation' },
+  en: { msg: "Hi, I'm ZyadBot, Zyad's AI assistant. Ask me about his experience, projects or skills.", ph: 'Your question', start: 'New conversation' }
+};
+let chat = null;
+function mountChat(l) {
+  if (chat) { try { chat.unmount(); } catch (e) {} }
+  document.getElementById('n8n-chat').innerHTML = '';
+  chat = createChat({
+    webhookUrl: URL_HOOK, target: '#n8n-chat', mode: 'fullscreen',
+    showWelcomeScreen: false, loadPreviousSession: false, defaultLanguage: 'en',
+    initialMessages: [T[l].msg],
+    i18n: { en: { title: 'ZyadBot', subtitle: '', footer: '', getStarted: T[l].start, inputPlaceholder: T[l].ph } }
+  });
+}
+function setLang(l) {
+  document.documentElement.lang = l;
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.set === l)));
+  try { localStorage.setItem('lang', l); } catch (e) {}
+  mountChat(l);
+}
+document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => { if (b.dataset.set !== document.documentElement.lang) setLang(b.dataset.set); }));
+let l = null;
+try { l = localStorage.getItem('lang'); } catch (e) {}
+if (l !== 'fr' && l !== 'en') l = (navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+setLang(l);
 </script>
 </body>
 </html>
