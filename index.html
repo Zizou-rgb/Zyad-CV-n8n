@@ -25,8 +25,9 @@ html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.6;font-size:17px}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--teal);outline-offset:3px}
-.wrap{max-width:1160px;margin:0 auto;padding:clamp(20px,4vw,48px) clamp(20px,4vw,40px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:start}
-.top{grid-column:1/-1;display:flex;justify-content:flex-end}
+.wrap{max-width:1160px;margin:0 auto;padding:clamp(20px,4vw,48px) clamp(20px,4vw,40px)}
+.cols{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:start;margin-top:1rem}
+.top{display:flex;justify-content:flex-end}
 .lang{display:flex;border:2px solid var(--ink);border-radius:8px;overflow:hidden}
 .lang button{font:600 .9rem 'Instrument Sans',sans-serif;padding:.35rem .8rem;border:0;background:transparent;color:var(--ink);cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
@@ -51,13 +52,13 @@ h2{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;margin:0 0 .75r
 #n8n-chat{height:660px;min-height:520px;max-height:85vh;border-radius:10px;overflow:hidden}
 .note{color:#B8C9CC;font-size:.82rem;margin:10px 12px 4px}
 .note a{color:var(--sand)}
-.privacy{grid-column:1/-1;border-top:1px solid var(--line);padding-top:1.75rem;max-width:80ch;font-size:.95rem}
+.privacy{margin-top:3rem;border-top:1px solid var(--line);padding-top:1.75rem;max-width:80ch;font-size:.95rem}
 .privacy h2{font-size:1.25rem}
 .privacy ul{padding-left:1.1rem}
 .privacy li{margin-bottom:.5rem}
 .privacy .upd{color:var(--muted);font-size:.88rem}
-footer{grid-column:1/-1;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);padding-top:1rem}
-@media (max-width:860px){.wrap{grid-template-columns:1fr}.chat{position:static}}
+footer{margin-top:2rem;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);padding-top:1rem}
+@media (max-width:860px){.cols{grid-template-columns:1fr}.chat{position:static}}
 </style>
 </head>
 <body>
@@ -67,6 +68,7 @@ footer{grid-column:1/-1;color:var(--muted);font-size:.88rem;border-top:1px solid
     <button type="button" data-set="en" aria-pressed="false">EN</button>
   </div></div>
 
+  <div class="cols">
   <section>
     <h1>Zyad El Fazazi</h1>
     <p class="role" lang="fr">Data & Business Analyst | Pilotage, Tech et Transformation digitale</p>
@@ -75,7 +77,7 @@ footer{grid-column:1/-1;color:var(--muted);font-size:.88rem;border-top:1px solid
     <p class="lead" lang="en">Engineer (Polytech Marseille) and manager (IAE Aix), I designed Power BI dashboards and automations in Ingenico's PMO team. I am looking for a permanent position from October 2026 in data, business analysis or consulting, at the crossroads of steering, data and project management.</p>
     <div class="actions">
       <a class="btn primary" lang="fr" href="cv-zyad-el-fazazi.pdf">Télécharger le CV</a>
-      <a class="btn primary" lang="en" href="cv-zyad-elfazazi-eng.pdf">Download my CV</a>
+      <a class="btn primary" lang="en" href="cv-zyad-el-fazazi-eng.pdf">Download my CV</a>
       <a class="btn" href="https://www.linkedin.com/in/zyad-el-fazazi-4b3121267">LinkedIn</a>
       <a class="btn" href="mailto:zyadelfazazi45@gmail.com"><span lang="fr">Écrire à Zyad</span><span lang="en">Email Zyad</span></a>
     </div>
@@ -112,34 +114,35 @@ footer{grid-column:1/-1;color:var(--muted);font-size:.88rem;border-top:1px solid
     <p class="note" lang="fr">ZyadBot est une IA et peut se tromper. Pour confirmer une information, contactez Zyad. <a href="#privacy">Confidentialité</a></p>
     <p class="note" lang="en">ZyadBot is an AI and can make mistakes. To confirm anything, contact Zyad. <a href="#privacy">Privacy</a></p>
   </aside>
+  </div>
 
   <section class="privacy" id="privacy">
     <div lang="fr">
-      <h2>Politique de confidentialité</h2>
-      <p class="upd">Dernière mise à jour : octobre 2026</p>
+      <h2>Confidentialité</h2>
+      <p class="upd">Mise à jour : octobre 2026</p>
       <ul>
-        <li><b>Responsable :</b> Zyad El Fazazi, joignable à zyadelfazazi45@gmail.com.</li>
-        <li><b>Données traitées :</b> les messages que vous écrivez dans le chat, un identifiant de session aléatoire, et des données techniques de connexion (adresse IP, navigateur) vues par les hébergeurs. Merci de ne pas saisir d'informations sensibles ou confidentielles.</li>
-        <li><b>Finalité et base légale :</b> permettre à ZyadBot de répondre à vos questions sur le profil de Zyad, et corriger ses réponses. Base : l'intérêt légitime de présenter ce profil.</li>
-        <li><b>Destinataires :</b> Hostinger (hébergement du chatbot), Google (modèle Gemini qui génère les réponses, vos messages lui sont transmis), Qdrant (base de connaissances sur Zyad, qui reçoit seulement une représentation numérique de votre question pour la recherche), GitHub (hébergement de cette page), jsDelivr et Google Fonts (chargement du script du chat et des polices, ils voient votre adresse IP). Certains traitements peuvent avoir lieu hors de l'Union européenne, avec les garanties prévues par ces prestataires.</li>
-        <li><b>Durée :</b> les conversations sont conservées au maximum 30 jours dans les journaux du chatbot, puis supprimées.</li>
-        <li><b>Cookies :</b> aucun cookie ni outil de mesure d'audience. Votre choix de langue est mémorisé dans votre navigateur et n'est pas transmis.</li>
-        <li><b>Intelligence artificielle :</b> ZyadBot est une IA, ses réponses peuvent contenir des erreurs.</li>
-        <li><b>Vos droits :</b> accès, rectification, effacement, opposition et limitation, en écrivant à l'adresse ci-dessus. Vous pouvez aussi saisir la CNIL (cnil.fr).</li>
+        <li><b>Responsable :</b> Zyad El Fazazi (zyadelfazazi45@gmail.com).</li>
+        <li><b>Données :</b> vos messages dans le chat, un identifiant de session aléatoire et des données techniques (adresse IP, navigateur). Merci de ne saisir aucune information sensible.</li>
+        <li><b>Finalité :</b> répondre à vos questions sur le profil de Zyad (intérêt légitime).</li>
+        <li><b>Prestataires :</b> Hostinger (hébergement), Google (modèle Gemini, reçoit vos messages), Qdrant (base de connaissances, reçoit une représentation numérique de votre question), GitHub, jsDelivr et Google Fonts (affichage de la page, voient votre adresse IP). Des transferts hors UE sont possibles.</li>
+        <li><b>Durée :</b> conversations conservées 30 jours maximum.</li>
+        <li><b>Cookies :</b> aucun. Votre choix de langue reste dans votre navigateur.</li>
+        <li><b>IA :</b> ZyadBot peut se tromper.</li>
+        <li><b>Vos droits :</b> accès, rectification, effacement, opposition : écrivez à l'adresse ci-dessus ou saisissez la CNIL (cnil.fr).</li>
       </ul>
     </div>
     <div lang="en">
-      <h2>Privacy notice</h2>
-      <p class="upd">Last updated: October 2026</p>
+      <h2>Privacy</h2>
+      <p class="upd">Updated: October 2026</p>
       <ul>
-        <li><b>Controller:</b> Zyad El Fazazi, reachable at zyadelfazazi45@gmail.com.</li>
-        <li><b>Data processed:</b> the messages you type in the chat, a random session ID, and technical connection data (IP address, browser) seen by the hosting providers. Please do not enter sensitive or confidential information.</li>
-        <li><b>Purpose and legal basis:</b> to let ZyadBot answer your questions about Zyad's profile, and to correct its answers. Basis: the legitimate interest in presenting this profile.</li>
-        <li><b>Recipients:</b> Hostinger (chatbot hosting), Google (Gemini model that generates answers, your messages are sent to it), Qdrant (knowledge base about Zyad, which only receives a numerical representation of your question for the search), GitHub (hosting of this page), jsDelivr and Google Fonts (loading the chat script and fonts, they see your IP address). Some processing may take place outside the European Union, under the safeguards these providers offer.</li>
-        <li><b>Retention:</b> conversations are kept for at most 30 days in the chatbot logs, then deleted.</li>
-        <li><b>Cookies:</b> no cookies and no analytics. Your language choice is remembered in your browser and is not transmitted.</li>
-        <li><b>Artificial intelligence:</b> ZyadBot is an AI, and its answers may contain errors.</li>
-        <li><b>Your rights:</b> access, rectification, erasure, objection and restriction, by writing to the address above. You may also contact the French data protection authority (CNIL, cnil.fr).</li>
+        <li><b>Controller:</b> Zyad El Fazazi (zyadelfazazi45@gmail.com).</li>
+        <li><b>Data:</b> your chat messages, a random session ID and technical data (IP address, browser). Please do not enter sensitive information.</li>
+        <li><b>Purpose:</b> to answer your questions about Zyad's profile (legitimate interest).</li>
+        <li><b>Providers:</b> Hostinger (hosting), Google (Gemini model, receives your messages), Qdrant (knowledge base, receives a numerical representation of your question), GitHub, jsDelivr and Google Fonts (page delivery, see your IP address). Transfers outside the EU are possible.</li>
+        <li><b>Retention:</b> conversations are kept for 30 days at most.</li>
+        <li><b>Cookies:</b> none. Your language choice stays in your browser.</li>
+        <li><b>AI:</b> ZyadBot can make mistakes.</li>
+        <li><b>Your rights:</b> access, rectification, erasure, objection: write to the address above or contact the CNIL (cnil.fr).</li>
       </ul>
     </div>
   </section>
